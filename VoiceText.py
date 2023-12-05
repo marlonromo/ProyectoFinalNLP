@@ -1,6 +1,9 @@
-import streamlit as st # Creación de aplicaciones web interactivas.
-import whisper # Cargar y utilizar el modelo de reconocimiento de voz.
-from transformers import pipeline # cargar el modelo de resumen de Hugging Face.
+# Creación de aplicaciones web interactivas.
+import streamlit as st
+# Cargar y utilizar el modelo de reconocimiento de voz.
+import whisper 
+# Cargar el modelo de resumen de Hugging Face.
+from transformers import pipeline
 
 # Marlon Romo
 #  Inicializa un pipeline para el modelo de resumen de Hugging Face.
@@ -8,9 +11,11 @@ summarizer = pipeline("summarization")
 
 st.title("Whisper App")
 
-audio_file = st.file_uploader("Upload Audio", type=["wav", "mp3", "m4a"]) # Crea un componente de carga de archivos para archivos de audio en formatos específicos.
+# Crea un componente de carga de archivos para archivos de audio en formatos específicos.
+audio_file = st.file_uploader("Upload Audio", type=["wav", "mp3", "m4a"]) 
 
-model = whisper.load_model("base") # Carga el modelo de reconocimiento de voz Whisper.
+# Carga el modelo de reconocimiento de voz Whisper.
+model = whisper.load_model("base")
 st.text("Whisper model loaded")
 
 # Crea un botón en la barra lateral que inicia el proceso de transcripción cuando se presiona.
